@@ -1,8 +1,19 @@
-//
-//  ServiceLocator.swift
-//  CrimsonGameEngine
-//
-//  Created by Karl Groff on 1/2/22.
-//
+// This class is based on reading done at https://gameprogrammingpatterns.com/service-locator.html
 
-import Foundation
+class ServiceLocator {
+    static let shared = ServiceLocator()
+    
+    private init() {
+        // Do nothing
+    }
+    
+    private var renderer: Renderer = NullRenderer()
+    
+    func getRenderer() -> Renderer {
+        return renderer
+    }
+    
+    func provide(renderer: Renderer) {
+        self.renderer = renderer
+    }
+}
