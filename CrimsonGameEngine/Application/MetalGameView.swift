@@ -8,7 +8,7 @@ class MetalGameView: MTKView {
         self.device = MTLCreateSystemDefaultDevice()
         self.clearColor = MTLClearColor(red: 0.73, green: 0.23, blue: 0.35, alpha: 1.0)
         self.colorPixelFormat = .bgra8Unorm
-        self.renderer = Renderer(self)
+        self.renderer = StandardRenderer(self)
         self.delegate = renderer
     }
 }

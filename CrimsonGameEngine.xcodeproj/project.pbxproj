@@ -12,7 +12,9 @@
 		CBC7475A27828483000935A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC7475827828483000935A3 /* Main.storyboard */; };
 		CBC74762278284A5000935A3 /* MetalGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC74761278284A5000935A3 /* MetalGameView.swift */; };
 		CBC74764278286B3000935A3 /* BasicShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = CBC74763278286B3000935A3 /* BasicShaders.metal */; };
-		CBC7476B27828F10000935A3 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7476A27828F10000935A3 /* Renderer.swift */; };
+		CBC7476B27828F10000935A3 /* StandardRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7476A27828F10000935A3 /* StandardRenderer.swift */; };
+		CBC7476E2782D46D000935A3 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7476D2782D46D000935A3 /* ServiceLocator.swift */; };
+		CBC747712782D5C2000935A3 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC747702782D5C2000935A3 /* Renderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +25,9 @@
 		CBC7475B27828483000935A3 /* CrimsonGameEngine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CrimsonGameEngine.entitlements; sourceTree = "<group>"; };
 		CBC74761278284A5000935A3 /* MetalGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalGameView.swift; sourceTree = "<group>"; };
 		CBC74763278286B3000935A3 /* BasicShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = BasicShaders.metal; sourceTree = "<group>"; };
-		CBC7476A27828F10000935A3 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		CBC7476A27828F10000935A3 /* StandardRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardRenderer.swift; sourceTree = "<group>"; };
+		CBC7476D2782D46D000935A3 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		CBC747702782D5C2000935A3 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,8 @@
 		CBC7475127828482000935A3 /* CrimsonGameEngine */ = {
 			isa = PBXGroup;
 			children = (
+				CBC7476C2782D461000935A3 /* Services */,
 				CBC7476827828E70000935A3 /* Application */,
-				CBC7476627828E59000935A3 /* Renderer */,
 				CBC7476527828E4F000935A3 /* Assets */,
 			);
 			path = CrimsonGameEngine;
@@ -74,7 +78,8 @@
 		CBC7476627828E59000935A3 /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
-				CBC7476A27828F10000935A3 /* Renderer.swift */,
+				CBC747702782D5C2000935A3 /* Renderer.swift */,
+				CBC7476F2782D4D8000935A3 /* Service Providers */,
 				CBC7476727828E63000935A3 /* Shaders */,
 			);
 			path = Renderer;
@@ -105,6 +110,23 @@
 				CBC7475B27828483000935A3 /* CrimsonGameEngine.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		CBC7476C2782D461000935A3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CBC7476D2782D46D000935A3 /* ServiceLocator.swift */,
+				CBC7476627828E59000935A3 /* Renderer */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CBC7476F2782D4D8000935A3 /* Service Providers */ = {
+			isa = PBXGroup;
+			children = (
+				CBC7476A27828F10000935A3 /* StandardRenderer.swift */,
+			);
+			path = "Service Providers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +199,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBC7476B27828F10000935A3 /* Renderer.swift in Sources */,
+				CBC7476B27828F10000935A3 /* StandardRenderer.swift in Sources */,
+				CBC7476E2782D46D000935A3 /* ServiceLocator.swift in Sources */,
 				CBC74762278284A5000935A3 /* MetalGameView.swift in Sources */,
 				CBC7475327828482000935A3 /* AppDelegate.swift in Sources */,
+				CBC747712782D5C2000935A3 /* Renderer.swift in Sources */,
 				CBC74764278286B3000935A3 /* BasicShaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

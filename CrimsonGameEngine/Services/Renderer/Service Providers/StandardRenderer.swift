@@ -1,6 +1,6 @@
 import MetalKit
 
-class Renderer: NSObject {
+class StandardRenderer: NSObject, Renderer {
     var device: MTLDevice?
     var commandQueue: MTLCommandQueue?
     var renderPipelineState: MTLRenderPipelineState?
@@ -18,7 +18,7 @@ class Renderer: NSObject {
     }
 }
 
-extension Renderer: MTKViewDelegate {
+extension StandardRenderer: MTKViewDelegate {
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         // TODO: Respond to window resize
     }
@@ -57,7 +57,4 @@ extension Renderer: MTKViewDelegate {
         commandBuffer.present(drawable)
         commandBuffer.commit()
     }
-    
-    
 }
-
