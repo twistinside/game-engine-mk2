@@ -54,14 +54,54 @@
 		CBC7475127828482000935A3 /* CrimsonGameEngine */ = {
 			isa = PBXGroup;
 			children = (
-				CBC7475227828482000935A3 /* AppDelegate.swift */,
-				CBC7475627828483000935A3 /* Assets.xcassets */,
-				CBC7475827828483000935A3 /* Main.storyboard */,
-				CBC7475B27828483000935A3 /* CrimsonGameEngine.entitlements */,
-				CBC74761278284A5000935A3 /* MetalGameView.swift */,
-				CBC74763278286B3000935A3 /* BasicShaders.metal */,
+				CBC7476827828E70000935A3 /* Application */,
+				CBC7476627828E59000935A3 /* Renderer */,
+				CBC7476527828E4F000935A3 /* Assets */,
 			);
 			path = CrimsonGameEngine;
+			sourceTree = "<group>";
+		};
+		CBC7476527828E4F000935A3 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CBC7475627828483000935A3 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		CBC7476627828E59000935A3 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				CBC7476727828E63000935A3 /* Shaders */,
+			);
+			path = Renderer;
+			sourceTree = "<group>";
+		};
+		CBC7476727828E63000935A3 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				CBC74763278286B3000935A3 /* BasicShaders.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		CBC7476827828E70000935A3 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				CBC7475227828482000935A3 /* AppDelegate.swift */,
+				CBC74761278284A5000935A3 /* MetalGameView.swift */,
+				CBC7476927828E7E000935A3 /* macOS */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		CBC7476927828E7E000935A3 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBC7475827828483000935A3 /* Main.storyboard */,
+				CBC7475B27828483000935A3 /* CrimsonGameEngine.entitlements */,
+			);
+			path = macOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +314,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = CrimsonGameEngine/CrimsonGameEngine.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CrimsonGameEngine/Application/macOS/CrimsonGameEngine.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -301,7 +341,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = CrimsonGameEngine/CrimsonGameEngine.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CrimsonGameEngine/Application/macOS/CrimsonGameEngine.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
