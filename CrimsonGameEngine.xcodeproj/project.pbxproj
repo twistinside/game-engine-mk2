@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		CBC7475327828482000935A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7475227828482000935A3 /* AppDelegate.swift */; };
-		CBC7475527828482000935A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7475427828482000935A3 /* ViewController.swift */; };
 		CBC7475727828483000935A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBC7475627828483000935A3 /* Assets.xcassets */; };
 		CBC7475A27828483000935A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC7475827828483000935A3 /* Main.storyboard */; };
+		CBC74762278284A5000935A3 /* MetalGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC74761278284A5000935A3 /* MetalGameView.swift */; };
+		CBC74764278286B3000935A3 /* BasicShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = CBC74763278286B3000935A3 /* BasicShaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CBC7474F27828482000935A3 /* CrimsonGameEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrimsonGameEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC7475227828482000935A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CBC7475427828482000935A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CBC7475627828483000935A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBC7475927828483000935A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBC7475B27828483000935A3 /* CrimsonGameEngine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CrimsonGameEngine.entitlements; sourceTree = "<group>"; };
+		CBC74761278284A5000935A3 /* MetalGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalGameView.swift; sourceTree = "<group>"; };
+		CBC74763278286B3000935A3 /* BasicShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = BasicShaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				CBC7475227828482000935A3 /* AppDelegate.swift */,
-				CBC7475427828482000935A3 /* ViewController.swift */,
 				CBC7475627828483000935A3 /* Assets.xcassets */,
 				CBC7475827828483000935A3 /* Main.storyboard */,
 				CBC7475B27828483000935A3 /* CrimsonGameEngine.entitlements */,
+				CBC74761278284A5000935A3 /* MetalGameView.swift */,
+				CBC74763278286B3000935A3 /* BasicShaders.metal */,
 			);
 			path = CrimsonGameEngine;
 			sourceTree = "<group>";
@@ -131,8 +134,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBC7475527828482000935A3 /* ViewController.swift in Sources */,
+				CBC74762278284A5000935A3 /* MetalGameView.swift in Sources */,
 				CBC7475327828482000935A3 /* AppDelegate.swift in Sources */,
+				CBC74764278286B3000935A3 /* BasicShaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
