@@ -12,7 +12,8 @@ class StandardRenderer: NSObject, Renderer {
     ]
     
     init(_ view: MTKView) {
-        self.device = view.device
+        self.device = MTLCreateSystemDefaultDevice()
+        view.device = self.device
         self.commandQueue = device?.makeCommandQueue()
         super.init()
     }
