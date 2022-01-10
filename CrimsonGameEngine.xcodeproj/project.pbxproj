@@ -11,7 +11,7 @@
 		CBC7475727828483000935A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBC7475627828483000935A3 /* Assets.xcassets */; };
 		CBC7475A27828483000935A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC7475827828483000935A3 /* Main.storyboard */; };
 		CBC74762278284A5000935A3 /* MetalGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC74761278284A5000935A3 /* MetalGameView.swift */; };
-		CBC74764278286B3000935A3 /* BasicShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = CBC74763278286B3000935A3 /* BasicShaders.metal */; };
+		CBC74764278286B3000935A3 /* Basic.metal in Sources */ = {isa = PBXBuildFile; fileRef = CBC74763278286B3000935A3 /* Basic.metal */; };
 		CBC7476B27828F10000935A3 /* StandardRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7476A27828F10000935A3 /* StandardRenderer.swift */; };
 		CBC7476E2782D46D000935A3 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7476D2782D46D000935A3 /* ServiceLocator.swift */; };
 		CBC747712782D5C2000935A3 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC747702782D5C2000935A3 /* Renderer.swift */; };
@@ -19,13 +19,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB4313032786DA960095977A /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; usesTabs = 0; };
 		CBC7474F27828482000935A3 /* CrimsonGameEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrimsonGameEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC7475227828482000935A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBC7475627828483000935A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBC7475927828483000935A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBC7475B27828483000935A3 /* CrimsonGameEngine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CrimsonGameEngine.entitlements; sourceTree = "<group>"; };
 		CBC74761278284A5000935A3 /* MetalGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalGameView.swift; sourceTree = "<group>"; };
-		CBC74763278286B3000935A3 /* BasicShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = BasicShaders.metal; sourceTree = "<group>"; };
+		CBC74763278286B3000935A3 /* Basic.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Basic.metal; sourceTree = "<group>"; };
 		CBC7476A27828F10000935A3 /* StandardRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardRenderer.swift; sourceTree = "<group>"; };
 		CBC7476D2782D46D000935A3 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		CBC747702782D5C2000935A3 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
@@ -90,7 +91,7 @@
 		CBC7476727828E63000935A3 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				CBC74763278286B3000935A3 /* BasicShaders.metal */,
+				CBC74763278286B3000935A3 /* Basic.metal */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -98,6 +99,7 @@
 		CBC7476827828E70000935A3 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				CB4313032786DA960095977A /* Common.h */,
 				CBC7475227828482000935A3 /* AppDelegate.swift */,
 				CBC74761278284A5000935A3 /* MetalGameView.swift */,
 				CBC7476927828E7E000935A3 /* macOS */,
@@ -208,7 +210,7 @@
 				CBC747732782DAF9000935A3 /* NullRenderer.swift in Sources */,
 				CBC7475327828482000935A3 /* AppDelegate.swift in Sources */,
 				CBC747712782D5C2000935A3 /* Renderer.swift in Sources */,
-				CBC74764278286B3000935A3 /* BasicShaders.metal in Sources */,
+				CBC74764278286B3000935A3 /* Basic.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,14 +346,17 @@
 		CBC7475F27828483000935A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLY_RULES_IN_COPY_HEADERS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_ENTITLEMENTS = CrimsonGameEngine/Application/macOS/CrimsonGameEngine.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 974VNYM3V8;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -361,6 +366,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_MODULES = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.CrimsonGameEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -371,14 +377,17 @@
 		CBC7476027828483000935A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLY_RULES_IN_COPY_HEADERS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_ENTITLEMENTS = CrimsonGameEngine/Application/macOS/CrimsonGameEngine.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 974VNYM3V8;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -388,6 +397,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_MODULES = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.CrimsonGameEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

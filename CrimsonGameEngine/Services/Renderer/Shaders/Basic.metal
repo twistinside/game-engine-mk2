@@ -1,5 +1,6 @@
 #include <metal_stdlib>
 using namespace metal;
+#import "../../../Application/Common.h"
 
 vertex float4 basicVertexShader(device float3 *vertices [[ buffer(0) ]],
                                 uint vertexID [[ vertex_id ]]) {
