@@ -2,9 +2,10 @@
 using namespace metal;
 #import "../../../Application/Common.h"
 
-vertex float4 basicVertexShader(device float3 *vertices [[ buffer(0) ]],
+vertex float4 basicVertexShader(constant Uniforms &uniforms [[ buffer(0) ]],
+                                device float3 *vertices [[ buffer(1) ]],
                                 uint vertexID [[ vertex_id ]]) {
-    return float4(vertices[vertexID], 1);
+    return float4(vertices[vertexID], 1) * uniforms.viewMatrix;
 }
 
 fragment half4 basicFragmentShader() {

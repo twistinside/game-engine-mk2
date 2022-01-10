@@ -1,7 +1,7 @@
 import MetalKit
 
 class NullRenderer: NSObject, Renderer {
-    // Empty
+    let uniforms: Uniforms = Uniforms()
 }
 
 extension NullRenderer: MTKViewDelegate {

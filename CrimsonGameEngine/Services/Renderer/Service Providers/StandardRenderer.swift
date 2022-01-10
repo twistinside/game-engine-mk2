@@ -1,9 +1,11 @@
 import MetalKit
+import simd
 
 class StandardRenderer: NSObject, Renderer {
     var device: MTLDevice?
     var commandQueue: MTLCommandQueue?
     var renderPipelineState: MTLRenderPipelineState?
+    var uniforms: Uniforms = Uniforms()
     
     let vertices: [float3] = [
         float3( 0, 1, 0), // Top middle
@@ -15,6 +17,7 @@ class StandardRenderer: NSObject, Renderer {
         self.device = MTLCreateSystemDefaultDevice()
         view.device = self.device
         self.commandQueue = device?.makeCommandQueue()
+        uniforms.viewMatrix = matrix_identity_float4x4
         super.init()
     }
 }
@@ -51,7 +54,8 @@ extension StandardRenderer: MTKViewDelegate {
         let vertexBuffer = device?.makeBuffer(bytes: vertices, length: MemoryLayout<float3>.stride * vertices.count, options: [])
         
         renderCommandEncoder.setRenderPipelineState(renderPipelineState!)
-        renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        renderCommandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.stride, index: 0)
+        renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 1)
         renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)
         renderCommandEncoder.endEncoding()
         
