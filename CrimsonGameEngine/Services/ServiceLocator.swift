@@ -8,6 +8,7 @@ class ServiceLocator {
     }
     
     private var renderer: Renderer = NullRenderer()
+    private var inputController: InputController = NullInputController()
     
     func getRenderer() -> Renderer {
         return renderer
@@ -15,5 +16,13 @@ class ServiceLocator {
     
     func provide(renderer: Renderer) {
         self.renderer = renderer
+    }
+    
+    func getInputControllet() -> InputController {
+        return inputController
+    }
+    
+    func provide(inputController: InputController) {
+        self.inputController = inputController
     }
 }

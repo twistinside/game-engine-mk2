@@ -16,6 +16,12 @@
 		CBC7476E2782D46D000935A3 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7476D2782D46D000935A3 /* ServiceLocator.swift */; };
 		CBC747712782D5C2000935A3 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC747702782D5C2000935A3 /* Renderer.swift */; };
 		CBC747732782DAF9000935A3 /* NullRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC747722782DAF9000935A3 /* NullRenderer.swift */; };
+		CBEC0C6E278BF17100777FD3 /* Input Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C6D278BF17100777FD3 /* Input Controller.swift */; };
+		CBEC0C74278BFC1600777FD3 /* Keyboard Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C73278BFC1600777FD3 /* Keyboard Control.swift */; };
+		CBEC0C76278BFE6400777FD3 /* Null Input Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C75278BFE6400777FD3 /* Null Input Controller.swift */; };
+		CBEC0C78278BFE9D00777FD3 /* Standard Input Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C77278BFE9D00777FD3 /* Standard Input Controller.swift */; };
+		CBEC0C7B278C01F600777FD3 /* Input State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C7A278C01F600777FD3 /* Input State.swift */; };
+		CBEC0C7D278C034F00777FD3 /* Debug Input Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C7C278C034F00777FD3 /* Debug Input Controller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +37,12 @@
 		CBC7476D2782D46D000935A3 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		CBC747702782D5C2000935A3 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		CBC747722782DAF9000935A3 /* NullRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullRenderer.swift; sourceTree = "<group>"; };
+		CBEC0C6D278BF17100777FD3 /* Input Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Input Controller.swift"; sourceTree = "<group>"; };
+		CBEC0C73278BFC1600777FD3 /* Keyboard Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboard Control.swift"; sourceTree = "<group>"; };
+		CBEC0C75278BFE6400777FD3 /* Null Input Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Null Input Controller.swift"; sourceTree = "<group>"; };
+		CBEC0C77278BFE9D00777FD3 /* Standard Input Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Standard Input Controller.swift"; sourceTree = "<group>"; };
+		CBEC0C7A278C01F600777FD3 /* Input State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Input State.swift"; sourceTree = "<group>"; };
+		CBEC0C7C278C034F00777FD3 /* Debug Input Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Debug Input Controller.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +133,7 @@
 			children = (
 				CBC7476D2782D46D000935A3 /* ServiceLocator.swift */,
 				CBC7476627828E59000935A3 /* Renderer */,
+				CBEC0C6C278BF0F400777FD3 /* Input Controller */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -132,6 +145,35 @@
 				CBC7476A27828F10000935A3 /* StandardRenderer.swift */,
 			);
 			path = "Service Providers";
+			sourceTree = "<group>";
+		};
+		CBEC0C6C278BF0F400777FD3 /* Input Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CBEC0C6D278BF17100777FD3 /* Input Controller.swift */,
+				CBEC0C71278BFBDD00777FD3 /* Service Providers */,
+				CBEC0C72278BFBF300777FD3 /* Utility */,
+			);
+			path = "Input Controller";
+			sourceTree = "<group>";
+		};
+		CBEC0C71278BFBDD00777FD3 /* Service Providers */ = {
+			isa = PBXGroup;
+			children = (
+				CBEC0C75278BFE6400777FD3 /* Null Input Controller.swift */,
+				CBEC0C77278BFE9D00777FD3 /* Standard Input Controller.swift */,
+				CBEC0C7C278C034F00777FD3 /* Debug Input Controller.swift */,
+			);
+			path = "Service Providers";
+			sourceTree = "<group>";
+		};
+		CBEC0C72278BFBF300777FD3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CBEC0C73278BFC1600777FD3 /* Keyboard Control.swift */,
+				CBEC0C7A278C01F600777FD3 /* Input State.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,9 +247,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBC7476B27828F10000935A3 /* StandardRenderer.swift in Sources */,
+				CBEC0C74278BFC1600777FD3 /* Keyboard Control.swift in Sources */,
 				CBC7476E2782D46D000935A3 /* ServiceLocator.swift in Sources */,
+				CBEC0C78278BFE9D00777FD3 /* Standard Input Controller.swift in Sources */,
+				CBEC0C7D278C034F00777FD3 /* Debug Input Controller.swift in Sources */,
 				CBC74762278284A5000935A3 /* MetalGameView.swift in Sources */,
+				CBEC0C7B278C01F600777FD3 /* Input State.swift in Sources */,
+				CBEC0C76278BFE6400777FD3 /* Null Input Controller.swift in Sources */,
 				CBC747732782DAF9000935A3 /* NullRenderer.swift in Sources */,
+				CBEC0C6E278BF17100777FD3 /* Input Controller.swift in Sources */,
 				CBC7475327828482000935A3 /* AppDelegate.swift in Sources */,
 				CBC747712782D5C2000935A3 /* Renderer.swift in Sources */,
 				CBC74764278286B3000935A3 /* Basic.metal in Sources */,

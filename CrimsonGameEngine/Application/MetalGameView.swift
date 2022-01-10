@@ -10,3 +10,25 @@ class MetalGameView: MTKView {
         self.delegate = serviceLocator.getRenderer()
     }
 }
+
+// MARK: - Keyboard handling
+extension MetalGameView {
+    override var acceptsFirstResponder: Bool {
+        return true
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        guard let key = KeyboardControl(rawValue: event.keyCode) else {
+            return
+        }
+        let state: InputState = event.isARepeat ? .continued : .began
+        serviceLocator.getInputControllet().processKeyEvent(key, state: state)
+    }
+    
+    override func keyUp(with event: NSEvent) {
+        guard let key = KeyboardControl(rawValue: event.keyCode) else {
+            return
+        }
+        serviceLocator.getInputControllet().processKeyEvent(key, state: .ended)
+    }
+}
