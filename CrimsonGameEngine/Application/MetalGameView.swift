@@ -6,8 +6,8 @@ class MetalGameView: MTKView {
         super.init(coder: coder)
         self.clearColor = MTLClearColor(red: 0.73, green: 0.23, blue: 0.35, alpha: 1.0)
         self.colorPixelFormat = .bgra8Unorm
-        serviceLocator.provide(renderer: StandardRenderer(self))
-        self.delegate = serviceLocator.getRenderer()
+        self.delegate = serviceLocator.renderer
+        self.device = serviceLocator.renderer.device
     }
 }
 
@@ -22,13 +22,13 @@ extension MetalGameView {
             return
         }
         let state: InputState = event.isARepeat ? .continued : .began
-        serviceLocator.getInputControllet().processKeyEvent(key, state: state)
+        serviceLocator.inputController.processKeyEvent(key, state: state)
     }
     
     override func keyUp(with event: NSEvent) {
         guard let key = KeyboardControl(rawValue: event.keyCode) else {
             return
         }
-        serviceLocator.getInputControllet().processKeyEvent(key, state: .ended)
+        serviceLocator.inputController.processKeyEvent(key, state: .ended)
     }
 }

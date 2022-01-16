@@ -2,7 +2,7 @@ import MetalKit
 import simd
 
 class StandardRenderer: NSObject, Renderer {
-    var device: MTLDevice?
+    var device: MTLDevice? = MTLCreateSystemDefaultDevice()
     var commandQueue: MTLCommandQueue?
     var renderPipelineState: MTLRenderPipelineState?
     var uniforms: Uniforms = Uniforms()
@@ -13,9 +13,7 @@ class StandardRenderer: NSObject, Renderer {
         float3( 1,-1, 0)  // Bottom right
     ]
     
-    init(_ view: MTKView) {
-        self.device = MTLCreateSystemDefaultDevice()
-        view.device = self.device
+    override init() {
         self.commandQueue = device?.makeCommandQueue()
         uniforms.viewMatrix = matrix_identity_float4x4
         super.init()

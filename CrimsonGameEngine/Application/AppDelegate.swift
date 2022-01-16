@@ -12,8 +12,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        let serviceLocator = ServiceLocator.shared
-        serviceLocator.provide(inputController: DebugInputController())
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

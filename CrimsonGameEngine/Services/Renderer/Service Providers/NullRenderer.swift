@@ -1,6 +1,7 @@
 import MetalKit
 
 class NullRenderer: NSObject, Renderer {
+    let device: MTLDevice? = nil
     let uniforms: Uniforms = Uniforms()
 }
 
