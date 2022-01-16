@@ -7,11 +7,7 @@ class StandardRenderer: NSObject, Renderer {
     var renderPipelineState: MTLRenderPipelineState?
     var uniforms: Uniforms = Uniforms()
     
-    let vertices: [float3] = [
-        float3( 0, 1, 0), // Top middle
-        float3(-1,-1, 0), // Bottom left
-        float3( 1,-1, 0)  // Bottom right
-    ]
+    let triangle = Triangle()
     
     override init() {
         self.commandQueue = device?.makeCommandQueue()
@@ -49,12 +45,12 @@ extension StandardRenderer: MTKViewDelegate {
             fatalError(error.localizedDescription)
         }
         
-        let vertexBuffer = device?.makeBuffer(bytes: vertices, length: MemoryLayout<float3>.stride * vertices.count, options: [])
+        let vertexBuffer = device?.makeBuffer(bytes: triangle.vertices, length: MemoryLayout<float3>.stride * triangle.vertices.count, options: [])
         
         renderCommandEncoder.setRenderPipelineState(renderPipelineState!)
         renderCommandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.stride, index: 0)
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 1)
-        renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)
+        renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: triangle.vertices.count)
         renderCommandEncoder.endEncoding()
         
         commandBuffer.present(drawable)

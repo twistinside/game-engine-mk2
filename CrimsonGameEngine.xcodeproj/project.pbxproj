@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB2D71872793EDE20045056C /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D71862793EDE20045056C /* Renderable.swift */; };
+		CB2D718B2793EE340045056C /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D718A2793EE340045056C /* Triangle.swift */; };
 		CBC7475327828482000935A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7475227828482000935A3 /* AppDelegate.swift */; };
 		CBC7475727828483000935A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBC7475627828483000935A3 /* Assets.xcassets */; };
 		CBC7475A27828483000935A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC7475827828483000935A3 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB2D71862793EDE20045056C /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
+		CB2D718A2793EE340045056C /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		CB4313032786DA960095977A /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; usesTabs = 0; };
 		CBC7474F27828482000935A3 /* CrimsonGameEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrimsonGameEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC7475227828482000935A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB2D71852793EDC50045056C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CB2D71892793EE230045056C /* Entities */,
+				CB2D71882793EE190045056C /* Protocols */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CB2D71882793EE190045056C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CB2D71862793EDE20045056C /* Renderable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CB2D71892793EE230045056C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CB2D718A2793EE340045056C /* Triangle.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		CBC7474627828482000935A3 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +106,7 @@
 			children = (
 				CBC7476827828E70000935A3 /* Application */,
 				CBC7476527828E4F000935A3 /* Assets */,
+				CB2D71852793EDC50045056C /* Entity */,
 				CBC7476C2782D461000935A3 /* Services */,
 			);
 			path = CrimsonGameEngine;
@@ -255,7 +285,9 @@
 				CBEC0C7B278C01F600777FD3 /* Input State.swift in Sources */,
 				CBEC0C76278BFE6400777FD3 /* Null Input Controller.swift in Sources */,
 				CBC747732782DAF9000935A3 /* NullRenderer.swift in Sources */,
+				CB2D71872793EDE20045056C /* Renderable.swift in Sources */,
 				CBEC0C6E278BF17100777FD3 /* Input Controller.swift in Sources */,
+				CB2D718B2793EE340045056C /* Triangle.swift in Sources */,
 				CBC7475327828482000935A3 /* AppDelegate.swift in Sources */,
 				CBC747712782D5C2000935A3 /* Renderer.swift in Sources */,
 				CBC74764278286B3000935A3 /* Basic.metal in Sources */,
