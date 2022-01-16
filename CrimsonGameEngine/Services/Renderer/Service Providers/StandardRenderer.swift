@@ -22,32 +22,30 @@ extension StandardRenderer: MTKViewDelegate {
     }
     
     func draw(in view: MTKView) {
-        guard let drawable = view.currentDrawable,
+        guard let device = self.device,
+              let library = device.makeDefaultLibrary(),
+              let drawable = view.currentDrawable,
               let renderPassDescriptor = view.currentRenderPassDescriptor,
               let commandBuffer = commandQueue!.makeCommandBuffer(),
-              let renderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
-        else {
-            return
+              let renderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+            fatalError()
         }
         
-        let library = device?.makeDefaultLibrary()
-        let vertexFunction = library?.makeFunction(name: "basicVertexShader")
-        let fragmentFunction = library?.makeFunction(name: "basicFragmentShader")
+        let vertexFunction = library.makeFunction(name: "basicVertexShader")
+        let fragmentFunction = library.makeFunction(name: "basicFragmentShader")
         
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
         renderPipelineDescriptor.vertexFunction = vertexFunction
         renderPipelineDescriptor.fragmentFunction = fragmentFunction
         
-        do {
-            renderPipelineState = try device?.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
-        } catch let error {
-            fatalError(error.localizedDescription)
+        guard let renderPipelineState = try? device.makeRenderPipelineState(descriptor: renderPipelineDescriptor) else {
+            fatalError()
         }
         
-        let vertexBuffer = device?.makeBuffer(bytes: triangle.vertices, length: MemoryLayout<float3>.stride * triangle.vertices.count, options: [])
+        let vertexBuffer = device.makeBuffer(bytes: triangle.vertices, length: MemoryLayout<float3>.stride * triangle.vertices.count, options: [])
         
-        renderCommandEncoder.setRenderPipelineState(renderPipelineState!)
+        renderCommandEncoder.setRenderPipelineState(renderPipelineState)
         renderCommandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.stride, index: 0)
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 1)
         renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: triangle.vertices.count)
