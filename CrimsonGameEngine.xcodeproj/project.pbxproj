@@ -64,17 +64,17 @@
 			isa = PBXGroup;
 			children = (
 				CB2D71892793EE230045056C /* Entities */,
-				CB2D71882793EE190045056C /* Protocols */,
+				CB2D71882793EE190045056C /* Components */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		CB2D71882793EE190045056C /* Protocols */ = {
+		CB2D71882793EE190045056C /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				CB2D71862793EDE20045056C /* Renderable.swift */,
 			);
-			path = Protocols;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		CB2D71892793EE230045056C /* Entities */ = {
