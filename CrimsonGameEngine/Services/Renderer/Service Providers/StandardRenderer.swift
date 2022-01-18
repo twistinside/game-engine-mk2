@@ -1,16 +1,22 @@
 import MetalKit
 import simd
 
-class StandardRenderer: NSObject, Renderer {
-    var device: MTLDevice? = MTLCreateSystemDefaultDevice()
-    var commandQueue: MTLCommandQueue?
-    var renderPipelineState: MTLRenderPipelineState?
+class StandardRenderer: NSObject, Renderer {    
+    var device: MTLDevice
+    var commandQueue: MTLCommandQueue
+    var library: RenderLibrary
     var uniforms: Uniforms = Uniforms()
     
     let triangle = Triangle()
     
     override init() {
-        self.commandQueue = device?.makeCommandQueue()
+        guard let device = MTLCreateSystemDefaultDevice(),
+              let commandQueue = device.makeCommandQueue() else {
+                  fatalError("Could not initialize default device.")
+              }
+        self.device = device
+        self.commandQueue = commandQueue
+        self.library = RenderLibrary(device: device)
         uniforms.viewMatrix = matrix_identity_float4x4
         super.init()
     }
@@ -22,30 +28,18 @@ extension StandardRenderer: MTKViewDelegate {
     }
     
     func draw(in view: MTKView) {
-        guard let device = self.device,
-              let library = device.makeDefaultLibrary(),
-              let drawable = view.currentDrawable,
+        guard let drawable = view.currentDrawable,
               let renderPassDescriptor = view.currentRenderPassDescriptor,
-              let commandBuffer = commandQueue!.makeCommandBuffer(),
+              let commandBuffer = commandQueue.makeCommandBuffer(),
               let renderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
             fatalError()
         }
         
-        let vertexFunction = library.makeFunction(name: "basicVertexShader")
-        let fragmentFunction = library.makeFunction(name: "basicFragmentShader")
         
-        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
-        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
-        renderPipelineDescriptor.vertexFunction = vertexFunction
-        renderPipelineDescriptor.fragmentFunction = fragmentFunction
-        
-        guard let renderPipelineState = try? device.makeRenderPipelineState(descriptor: renderPipelineDescriptor) else {
-            fatalError()
-        }
         
         let vertexBuffer = device.makeBuffer(bytes: triangle.vertices, length: MemoryLayout<float3>.stride * triangle.vertices.count, options: [])
         
-        renderCommandEncoder.setRenderPipelineState(renderPipelineState)
+        renderCommandEncoder.setRenderPipelineState(library.getRenderPipelineState(.basic))
         renderCommandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.stride, index: 0)
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 1)
         renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: triangle.vertices.count)

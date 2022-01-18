@@ -1,8 +1,18 @@
 import MetalKit
 
 class NullRenderer: NSObject, Renderer {
-    let device: MTLDevice? = nil
+    let device: MTLDevice
+    var library: RenderLibrary
     let uniforms: Uniforms = Uniforms()
+    
+    override init() {
+        guard let device = MTLCreateSystemDefaultDevice(),
+              let commandQueue = device.makeCommandQueue() else {
+                  fatalError("Could not initialize default device.")
+              }
+        self.device = device
+        self.library = RenderLibrary(device: device)
+    }
 }
 
 extension NullRenderer: MTKViewDelegate {
