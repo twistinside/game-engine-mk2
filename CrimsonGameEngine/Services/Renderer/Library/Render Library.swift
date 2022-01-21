@@ -13,19 +13,19 @@ struct RenderLibrary {
         self.renderPipelineStateLibrary = RenderPipelineStateLibrary(device: device, renderPipelineDescriptorLibrary: renderPipelineDescriptorLibrary)
     }
     
-    func getRenderPipelineDescriptor(_ resource: RenderPipelineDescriptorResource) -> MTLRenderPipelineDescriptor {
+    func getRenderPipelineDescriptor(for resource: RenderPipelineDescriptorResource) -> MTLRenderPipelineDescriptor {
         return renderPipelineDescriptorLibrary.renderPipelineDescriptors[resource]!
     }
     
-    func getRenderPipelineState(_ resource: RenderPipelineStateResource) -> MTLRenderPipelineState {
+    func getRenderPipelineState(for resource: RenderPipelineStateResource) -> MTLRenderPipelineState {
         return renderPipelineStateLibrary.renderPipelineStates[resource]!
     }
     
-    func getShader(_ resource: ShaderResource) -> MTLFunction {
+    func getShader(for resource: ShaderResource) -> MTLFunction {
         return shaderLibrary.shaders[resource]!
     }
     
-    func getVertexDescriptor(_ resource: VertexDescriptorResource) -> MTLVertexDescriptor {
+    func getVertexDescriptor(for resource: VertexDescriptorResource) -> MTLVertexDescriptor {
         return vertexDescriptorLibrary.vertexDescriptors[resource]!
     }
 }

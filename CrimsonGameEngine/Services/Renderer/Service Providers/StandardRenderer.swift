@@ -35,11 +35,9 @@ extension StandardRenderer: MTKViewDelegate {
             fatalError()
         }
         
-        
-        
         let vertexBuffer = device.makeBuffer(bytes: triangle.vertices, length: MemoryLayout<float3>.stride * triangle.vertices.count, options: [])
         
-        renderCommandEncoder.setRenderPipelineState(library.getRenderPipelineState(.basic))
+        renderCommandEncoder.setRenderPipelineState(library.getRenderPipelineState(for: .basic))
         renderCommandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.stride, index: 0)
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 1)
         renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: triangle.vertices.count)
