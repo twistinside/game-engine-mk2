@@ -15,6 +15,7 @@
 		CBA97920279645D30065A75C /* Vertex Descriptor Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9791F279645D30065A75C /* Vertex Descriptor Library.swift */; };
 		CBA979232796468D0065A75C /* Render Pipeline Descriptor Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA979222796468D0065A75C /* Render Pipeline Descriptor Library.swift */; };
 		CBA97925279663DD0065A75C /* Render Pipeline State Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA97924279663DD0065A75C /* Render Pipeline State Library.swift */; };
+		CBA979272797A38E0065A75C /* Cube.usdz in Resources */ = {isa = PBXBuildFile; fileRef = CBA979262797A38E0065A75C /* Cube.usdz */; };
 		CBC7475327828482000935A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7475227828482000935A3 /* AppDelegate.swift */; };
 		CBC7475727828483000935A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBC7475627828483000935A3 /* Assets.xcassets */; };
 		CBC7475A27828483000935A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC7475827828483000935A3 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		CBA9791F279645D30065A75C /* Vertex Descriptor Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vertex Descriptor Library.swift"; sourceTree = "<group>"; };
 		CBA979222796468D0065A75C /* Render Pipeline Descriptor Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Render Pipeline Descriptor Library.swift"; sourceTree = "<group>"; };
 		CBA97924279663DD0065A75C /* Render Pipeline State Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Render Pipeline State Library.swift"; sourceTree = "<group>"; };
+		CBA979262797A38E0065A75C /* Cube.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Cube.usdz; sourceTree = "<group>"; };
 		CBC7474F27828482000935A3 /* CrimsonGameEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrimsonGameEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC7475227828482000935A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBC7475627828483000935A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		CBC7476527828E4F000935A3 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CBA979262797A38E0065A75C /* Cube.usdz */,
 				CBC7475627828483000935A3 /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBC7475727828483000935A3 /* Assets.xcassets in Resources */,
+				CBA979272797A38E0065A75C /* Cube.usdz in Resources */,
 				CBC7475A27828483000935A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
