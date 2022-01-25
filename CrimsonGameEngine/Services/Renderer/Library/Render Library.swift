@@ -1,6 +1,7 @@
 import MetalKit
 
 struct RenderLibrary {
+    private let meshLibrary: MeshLibrary
     private let shaderLibrary: ShaderLibrary
     private let renderPipelineDescriptorLibrary: RenderPipelineDescriptorLibrary
     private let renderPipelineStateLibrary: RenderPipelineStateLibrary
@@ -9,8 +10,13 @@ struct RenderLibrary {
     init(device: MTLDevice) {
         self.shaderLibrary = ShaderLibrary(device: device)
         self.vertexDescriptorLibrary = VertexDescriptorLibrary()
+        self.meshLibrary = MeshLibrary(device: device, vertexDescriptorLibrary: vertexDescriptorLibrary)
         self.renderPipelineDescriptorLibrary = RenderPipelineDescriptorLibrary(shaderLibrary: shaderLibrary, vertexDescriptorLibrary: vertexDescriptorLibrary)
         self.renderPipelineStateLibrary = RenderPipelineStateLibrary(device: device, renderPipelineDescriptorLibrary: renderPipelineDescriptorLibrary)
+    }
+    
+    func getMesh(for resource: MeshResource) -> [MTKMesh] {
+        return meshLibrary.meshes[resource]!
     }
     
     func getRenderPipelineDescriptor(for resource: RenderPipelineDescriptorResource) -> MTLRenderPipelineDescriptor {

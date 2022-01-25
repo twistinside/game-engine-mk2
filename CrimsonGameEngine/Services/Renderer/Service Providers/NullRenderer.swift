@@ -6,8 +6,7 @@ class NullRenderer: NSObject, Renderer {
     let uniforms: Uniforms = Uniforms()
     
     override init() {
-        guard let device = MTLCreateSystemDefaultDevice(),
-              let commandQueue = device.makeCommandQueue() else {
+        guard let device = MTLCreateSystemDefaultDevice() else {
                   fatalError("Could not initialize default device.")
               }
         self.device = device

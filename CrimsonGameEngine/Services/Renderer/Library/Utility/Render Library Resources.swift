@@ -2,6 +2,10 @@ enum DepthStencilStateResource: CaseIterable {
     case less
 }
 
+enum MeshResource: String, CaseIterable {
+    case cube = "Cube"
+}
+
 enum RenderPipelineDescriptorResource: CaseIterable {
     case basic
 }

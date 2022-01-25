@@ -2,13 +2,13 @@ import MetalKit
 import simd
 
 class StandardRenderer: NSObject, Renderer {    
-    var device: MTLDevice
-    var commandQueue: MTLCommandQueue
+    let device: MTLDevice
+    let commandQueue: MTLCommandQueue
+    
     var library: RenderLibrary
     var uniforms: Uniforms = Uniforms()
-    
-    let triangle = Triangle()
-    
+    var meshes: [MTKMesh] = []
+        
     override init() {
         guard let device = MTLCreateSystemDefaultDevice(),
               let commandQueue = device.makeCommandQueue() else {
@@ -35,12 +35,10 @@ extension StandardRenderer: MTKViewDelegate {
             fatalError()
         }
         
-        let vertexBuffer = device.makeBuffer(bytes: triangle.vertices, length: MemoryLayout<float3>.stride * triangle.vertices.count, options: [])
+        let cube = Cube()
         
-        renderCommandEncoder.setRenderPipelineState(library.getRenderPipelineState(for: .basic))
         renderCommandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.stride, index: 0)
-        renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 1)
-        renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: triangle.vertices.count)
+        cube.render(renderCommandEncoder: renderCommandEncoder)
         renderCommandEncoder.endEncoding()
         
         commandBuffer.present(drawable)
