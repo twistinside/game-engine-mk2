@@ -8,7 +8,7 @@ class Entity {
         self.name = name
     }
     
-    func update() {
+    func update(deltaTime: Float) {
         // do nothing in this base class
     }
 }

@@ -8,6 +8,7 @@ class StandardRenderer: NSObject, Renderer {
     var library: RenderLibrary
     var uniforms: Uniforms = Uniforms()
     var meshes: [MTKMesh] = []
+    var cube: Cube?
         
     override init() {
         guard let device = MTLCreateSystemDefaultDevice(),
@@ -35,10 +36,16 @@ extension StandardRenderer: MTKViewDelegate {
             fatalError()
         }
         
-        let cube = Cube()
+        if let unwrapped = cube {
+            unwrapped.update(deltaTime: 1/Float(view.preferredFramesPerSecond))
+            unwrapped.render(renderCommandEncoder: renderCommandEncoder)
+        } else {
+            cube = Cube()
+            cube!.update(deltaTime: 1/Float(view.preferredFramesPerSecond))
+            cube!.render(renderCommandEncoder: renderCommandEncoder)
+        }
         
         renderCommandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.stride, index: 0)
-        cube.render(renderCommandEncoder: renderCommandEncoder)
         renderCommandEncoder.endEncoding()
         
         commandBuffer.present(drawable)

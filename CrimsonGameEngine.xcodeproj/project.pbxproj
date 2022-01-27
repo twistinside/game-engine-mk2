@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB2D71872793EDE20045056C /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D71862793EDE20045056C /* Renderable.swift */; };
+		CB6847CE27A274D000BCA69F /* Matrix Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6847CD27A274D000BCA69F /* Matrix Globals.swift */; };
 		CBA7B8E0279FD97F0010375D /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7B8DF279FD97F0010375D /* Entity.swift */; };
 		CBA7B8E2279FD98F0010375D /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7B8E1279FD98F0010375D /* Cube.swift */; };
 		CBA7B8E4279FD9B60010375D /* Mesh Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7B8E3279FD9B60010375D /* Mesh Library.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		CB2D71862793EDE20045056C /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
 		CB4313032786DA960095977A /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; usesTabs = 0; };
+		CB6847CD27A274D000BCA69F /* Matrix Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Matrix Globals.swift"; sourceTree = "<group>"; };
 		CBA7B8DF279FD97F0010375D /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		CBA7B8E1279FD98F0010375D /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		CBA7B8E3279FD9B60010375D /* Mesh Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mesh Library.swift"; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		CB6847CC27A274A700BCA69F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CB6847CD27A274D000BCA69F /* Matrix Globals.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		CBA979142795390A0065A75C /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 				CBC7476527828E4F000935A3 /* Assets */,
 				CB2D71852793EDC50045056C /* Entity */,
 				CBC7476C2782D461000935A3 /* Services */,
+				CB6847CC27A274A700BCA69F /* Utility */,
 			);
 			path = CrimsonGameEngine;
 			sourceTree = "<group>";
@@ -340,6 +351,7 @@
 				CBC74762278284A5000935A3 /* MetalGameView.swift in Sources */,
 				CBA9791C279612EF0065A75C /* Render Library Resources.swift in Sources */,
 				CBA979232796468D0065A75C /* Render Pipeline Descriptor Library.swift in Sources */,
+				CB6847CE27A274D000BCA69F /* Matrix Globals.swift in Sources */,
 				CBEC0C7B278C01F600777FD3 /* Input State.swift in Sources */,
 				CBA7B8E2279FD98F0010375D /* Cube.swift in Sources */,
 				CBEC0C76278BFE6400777FD3 /* Null Input Controller.swift in Sources */,
