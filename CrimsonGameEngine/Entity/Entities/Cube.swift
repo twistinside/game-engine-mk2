@@ -10,7 +10,7 @@ class Cube: Entity {
     var modelMatrix: simd_float4x4 = simd_float4x4(0)
     var position: SIMD3<Float> = SIMD3<Float>(repeating: 0)
     var rotation: SIMD3<Float> = SIMD3<Float>(repeating: 0)
-    var scale: SIMD3<Float> = SIMD3<Float>(repeating: 0)
+    var scale: SIMD3<Float> = SIMD3<Float>(repeating: 1)
     
     override init(name: String? = nil) {
         super.init(name: name)
