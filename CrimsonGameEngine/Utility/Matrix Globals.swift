@@ -3,7 +3,7 @@
 
 import simd
 
-func createTranslationMatrix(tx: Float, ty: Float, tz: Float) -> matrix_float4x4 {
+func createTranslationMatrix(tx: Float, ty: Float, tz: Float) -> simd_float4x4 {
     var translationMatrix = matrix_identity_float4x4
     
     translationMatrix[3, 0] = tx
@@ -13,12 +13,6 @@ func createTranslationMatrix(tx: Float, ty: Float, tz: Float) -> matrix_float4x4
     return translationMatrix
 }
 
-func createScaleMatrix(xScale: Float, yScale: Float, zScale: Float) -> matrix_float4x4 {
-    var scaleMatrix = matrix_identity_float4x4
-    
-    scaleMatrix[0, 0] = xScale
-    scaleMatrix[1, 1] = yScale
-    scaleMatrix[2, 2] = zScale
-    
-    return scaleMatrix
+func createScaleMatrix(xScale: Float, yScale: Float, zScale: Float) -> simd_float4x4 {
+    return simd_float4x4(diagonal: SIMD4<Float>(xScale, yScale, zScale, 1))
 }
