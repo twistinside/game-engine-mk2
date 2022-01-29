@@ -7,7 +7,7 @@ class Cube: Entity {
     private final let meshes: [MTKMesh] = ServiceLocator.shared.library.getMesh(for: .cube)
     
     var elapsedTime: Float = 0.0
-    var modelMatrix: simd_float4x4 = simd_float4x4(0)
+    var modelMatrix: simd_float4x4 = matrix_identity_float4x4
     var position: SIMD3<Float> = SIMD3<Float>(0, 0, 0)
     var rotation: SIMD3<Float> = SIMD3<Float>(repeating: 0)
     var scale: SIMD3<Float> = SIMD3<Float>(repeating: 0.15)
