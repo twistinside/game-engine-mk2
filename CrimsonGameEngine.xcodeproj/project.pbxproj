@@ -12,8 +12,8 @@
 		CBA7B8E0279FD97F0010375D /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7B8DF279FD97F0010375D /* Entity.swift */; };
 		CBA7B8E2279FD98F0010375D /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7B8E1279FD98F0010375D /* Cube.swift */; };
 		CBA7B8E4279FD9B60010375D /* Mesh Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7B8E3279FD9B60010375D /* Mesh Library.swift */; };
-		CBA97916279539BD0065A75C /* Render Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA97915279539BD0065A75C /* Render Library.swift */; };
-		CBA9791C279612EF0065A75C /* Render Library Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9791B279612EF0065A75C /* Render Library Resources.swift */; };
+		CBA97916279539BD0065A75C /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA97915279539BD0065A75C /* Library.swift */; };
+		CBA9791C279612EF0065A75C /* Library Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9791B279612EF0065A75C /* Library Resources.swift */; };
 		CBA9791E279621510065A75C /* Shader Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9791D279621510065A75C /* Shader Library.swift */; };
 		CBA97920279645D30065A75C /* Vertex Descriptor Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9791F279645D30065A75C /* Vertex Descriptor Library.swift */; };
 		CBA979232796468D0065A75C /* Render Pipeline Descriptor Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA979222796468D0065A75C /* Render Pipeline Descriptor Library.swift */; };
@@ -43,8 +43,8 @@
 		CBA7B8DF279FD97F0010375D /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		CBA7B8E1279FD98F0010375D /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		CBA7B8E3279FD9B60010375D /* Mesh Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mesh Library.swift"; sourceTree = "<group>"; };
-		CBA97915279539BD0065A75C /* Render Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Render Library.swift"; sourceTree = "<group>"; };
-		CBA9791B279612EF0065A75C /* Render Library Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Render Library Resources.swift"; sourceTree = "<group>"; };
+		CBA97915279539BD0065A75C /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		CBA9791B279612EF0065A75C /* Library Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Library Resources.swift"; sourceTree = "<group>"; };
 		CBA9791D279621510065A75C /* Shader Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shader Library.swift"; sourceTree = "<group>"; };
 		CBA9791F279645D30065A75C /* Vertex Descriptor Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vertex Descriptor Library.swift"; sourceTree = "<group>"; };
 		CBA979222796468D0065A75C /* Render Pipeline Descriptor Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Render Pipeline Descriptor Library.swift"; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		CBA979142795390A0065A75C /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				CBA97915279539BD0065A75C /* Render Library.swift */,
+				CBA97915279539BD0065A75C /* Library.swift */,
 				CBA97917279555DE0065A75C /* Types */,
 				CBA97918279556860065A75C /* Utility */,
 			);
@@ -139,7 +139,7 @@
 		CBA97918279556860065A75C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				CBA9791B279612EF0065A75C /* Render Library Resources.swift */,
+				CBA9791B279612EF0065A75C /* Library Resources.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -186,7 +186,6 @@
 			children = (
 				CBC747702782D5C2000935A3 /* Renderer.swift */,
 				CBC7476F2782D4D8000935A3 /* Service Providers */,
-				CBA979142795390A0065A75C /* Library */,
 				CBC7476727828E63000935A3 /* Shaders */,
 			);
 			path = Renderer;
@@ -225,6 +224,7 @@
 			children = (
 				CBC7476D2782D46D000935A3 /* ServiceLocator.swift */,
 				CBC7476627828E59000935A3 /* Renderer */,
+				CBA979142795390A0065A75C /* Library */,
 				CBEC0C6C278BF0F400777FD3 /* Input Controller */,
 			);
 			path = Services;
@@ -343,13 +343,13 @@
 				CBEC0C74278BFC1600777FD3 /* Keyboard Control.swift in Sources */,
 				CBA7B8E0279FD97F0010375D /* Entity.swift in Sources */,
 				CBC7476E2782D46D000935A3 /* ServiceLocator.swift in Sources */,
-				CBA97916279539BD0065A75C /* Render Library.swift in Sources */,
+				CBA97916279539BD0065A75C /* Library.swift in Sources */,
 				CBEC0C78278BFE9D00777FD3 /* Standard Input Controller.swift in Sources */,
 				CBA7B8E4279FD9B60010375D /* Mesh Library.swift in Sources */,
 				CBA97920279645D30065A75C /* Vertex Descriptor Library.swift in Sources */,
 				CBEC0C7D278C034F00777FD3 /* Debug Input Controller.swift in Sources */,
 				CBC74762278284A5000935A3 /* MetalGameView.swift in Sources */,
-				CBA9791C279612EF0065A75C /* Render Library Resources.swift in Sources */,
+				CBA9791C279612EF0065A75C /* Library Resources.swift in Sources */,
 				CBA979232796468D0065A75C /* Render Pipeline Descriptor Library.swift in Sources */,
 				CB6847CE27A274D000BCA69F /* Matrix Globals.swift in Sources */,
 				CBEC0C7B278C01F600777FD3 /* Input State.swift in Sources */,

@@ -5,9 +5,7 @@ class StandardRenderer: NSObject, Renderer {
     let device: MTLDevice
     let commandQueue: MTLCommandQueue
     
-    var library: RenderLibrary
     var uniforms: Uniforms = Uniforms()
-    var meshes: [MTKMesh] = []
     var cube: Cube?
         
     override init() {
@@ -17,7 +15,6 @@ class StandardRenderer: NSObject, Renderer {
               }
         self.device = device
         self.commandQueue = commandQueue
-        self.library = RenderLibrary(device: device)
         uniforms.viewMatrix = matrix_identity_float4x4
         super.init()
     }

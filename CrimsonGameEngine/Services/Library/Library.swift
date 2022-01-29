@@ -1,6 +1,6 @@
 import MetalKit
 
-struct RenderLibrary {
+struct Library {
     private let meshLibrary: MeshLibrary
     private let shaderLibrary: ShaderLibrary
     private let renderPipelineDescriptorLibrary: RenderPipelineDescriptorLibrary

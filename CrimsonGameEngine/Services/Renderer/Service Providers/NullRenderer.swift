@@ -2,7 +2,6 @@ import MetalKit
 
 class NullRenderer: NSObject, Renderer {
     let device: MTLDevice
-    var library: RenderLibrary
     let uniforms: Uniforms = Uniforms()
     
     override init() {
@@ -10,7 +9,6 @@ class NullRenderer: NSObject, Renderer {
                   fatalError("Could not initialize default device.")
               }
         self.device = device
-        self.library = RenderLibrary(device: device)
     }
 }
 
