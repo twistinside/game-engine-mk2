@@ -28,6 +28,8 @@
 		CBC7476E2782D46D000935A3 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7476D2782D46D000935A3 /* ServiceLocator.swift */; };
 		CBC747712782D5C2000935A3 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC747702782D5C2000935A3 /* Renderer.swift */; };
 		CBC747732782DAF9000935A3 /* NullRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC747722782DAF9000935A3 /* NullRenderer.swift */; };
+		CBE52C7227B06FAB00F3BED1 /* Bunny.usdz in Resources */ = {isa = PBXBuildFile; fileRef = CBE52C7127B06FAB00F3BED1 /* Bunny.usdz */; };
+		CBE52C7427B06FB900F3BED1 /* Bunny.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE52C7327B06FB900F3BED1 /* Bunny.swift */; };
 		CBEC0C6E278BF17100777FD3 /* Input Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C6D278BF17100777FD3 /* Input Controller.swift */; };
 		CBEC0C74278BFC1600777FD3 /* Keyboard Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C73278BFC1600777FD3 /* Keyboard Control.swift */; };
 		CBEC0C76278BFE6400777FD3 /* Null Input Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C75278BFE6400777FD3 /* Null Input Controller.swift */; };
@@ -61,6 +63,8 @@
 		CBC7476D2782D46D000935A3 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		CBC747702782D5C2000935A3 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		CBC747722782DAF9000935A3 /* NullRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullRenderer.swift; sourceTree = "<group>"; };
+		CBE52C7127B06FAB00F3BED1 /* Bunny.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Bunny.usdz; sourceTree = "<group>"; };
+		CBE52C7327B06FB900F3BED1 /* Bunny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bunny.swift; sourceTree = "<group>"; };
 		CBEC0C6D278BF17100777FD3 /* Input Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Input Controller.swift"; sourceTree = "<group>"; };
 		CBEC0C73278BFC1600777FD3 /* Keyboard Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboard Control.swift"; sourceTree = "<group>"; };
 		CBEC0C75278BFE6400777FD3 /* Null Input Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Null Input Controller.swift"; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				CBA7B8E1279FD98F0010375D /* Cube.swift */,
+				CBE52C7327B06FB900F3BED1 /* Bunny.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 		CBC7476527828E4F000935A3 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CBE52C7127B06FAB00F3BED1 /* Bunny.usdz */,
 				CBA979262797A38E0065A75C /* Cube.usdz */,
 				CBC7475627828483000935A3 /* Assets.xcassets */,
 			);
@@ -328,6 +334,7 @@
 			files = (
 				CBC7475727828483000935A3 /* Assets.xcassets in Resources */,
 				CBA979272797A38E0065A75C /* Cube.usdz in Resources */,
+				CBE52C7227B06FAB00F3BED1 /* Bunny.usdz in Resources */,
 				CBC7475A27828483000935A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +348,7 @@
 			files = (
 				CBC7476B27828F10000935A3 /* StandardRenderer.swift in Sources */,
 				CBEC0C74278BFC1600777FD3 /* Keyboard Control.swift in Sources */,
+				CBE52C7427B06FB900F3BED1 /* Bunny.swift in Sources */,
 				CBA7B8E0279FD97F0010375D /* Entity.swift in Sources */,
 				CBC7476E2782D46D000935A3 /* ServiceLocator.swift in Sources */,
 				CBA97916279539BD0065A75C /* Library.swift in Sources */,

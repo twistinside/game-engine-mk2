@@ -3,6 +3,7 @@ enum DepthStencilStateResource: CaseIterable {
 }
 
 enum MeshResource: String, CaseIterable {
+    case bunny = "Bunny"
     case cube = "Cube"
 }
 
