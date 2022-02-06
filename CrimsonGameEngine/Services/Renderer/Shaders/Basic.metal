@@ -6,7 +6,7 @@ vertex float4 basic_vertex_shader(constant Uniforms        & uniforms    [[ buff
                                   constant matrix_float4x4 & modelMatrix [[ buffer(1) ]],
                                   constant float3          * vertices    [[ buffer(2) ]],
                                            uint              vertexID    [[ vertex_id ]]) {
-    return float4(vertices[vertexID], 1) * modelMatrix;
+    return uniforms.projectionMatrix * uniforms.viewMatrix * modelMatrix * float4(vertices[vertexID], 1);
 }
 
 fragment half4 basic_fragment_shader() {

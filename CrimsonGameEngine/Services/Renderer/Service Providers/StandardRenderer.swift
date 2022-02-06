@@ -6,6 +6,7 @@ class StandardRenderer: NSObject, Renderer {
     let commandQueue: MTLCommandQueue
     
     var uniforms: Uniforms = Uniforms()
+    var bunny: Bunny?
     var cube: Cube?
         
     override init() {
@@ -15,6 +16,7 @@ class StandardRenderer: NSObject, Renderer {
               }
         self.device = device
         self.commandQueue = commandQueue
+        uniforms.projectionMatrix = matrix_identity_float4x4
         uniforms.viewMatrix = matrix_identity_float4x4
         super.init()
     }
@@ -33,16 +35,17 @@ extension StandardRenderer: MTKViewDelegate {
             fatalError()
         }
         
-        if let unwrapped = cube {
+        renderCommandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.stride, index: 0)
+        
+        if let unwrapped = bunny {
             unwrapped.update(deltaTime: 1/Float(view.preferredFramesPerSecond))
             unwrapped.render(renderCommandEncoder: renderCommandEncoder)
         } else {
-            cube = Cube()
-            cube!.update(deltaTime: 1/Float(view.preferredFramesPerSecond))
-            cube!.render(renderCommandEncoder: renderCommandEncoder)
+            bunny = Bunny()
+            bunny!.update(deltaTime: 1/Float(view.preferredFramesPerSecond))
+            bunny!.render(renderCommandEncoder: renderCommandEncoder)
         }
         
-        renderCommandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.stride, index: 0)
         renderCommandEncoder.endEncoding()
         
         commandBuffer.present(drawable)
