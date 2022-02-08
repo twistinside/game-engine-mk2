@@ -2,7 +2,7 @@ import Foundation
 import MetalKit
 import simd
 
-class Bunny: Entity, Renderable, Transformable {
+class Bunny: Entity, Renderable {
     private var _elapsedTime: Float = 0.0
     
     var renderableComponent: RenderableComponent

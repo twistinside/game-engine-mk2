@@ -2,7 +2,7 @@ import Foundation
 import MetalKit
 import simd
 
-class Cube: Entity, Renderable, Transformable {
+class Cube: Entity, Renderable {
     private var _elapsedTime: Float = 0.0
     
     var renderableComponent: RenderableComponent
