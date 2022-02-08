@@ -48,3 +48,7 @@ func createRotationMatrix(xRotation: Float, yRotation: Float, zRotation: Float) 
 func createScaleMatrix(xScale: Float, yScale: Float, zScale: Float) -> simd_float4x4 {
     return simd_float4x4(diagonal: SIMD4<Float>(xScale, yScale, zScale, 1))
 }
+
+func createModelMatrix(position: SIMD3<Float>, rotation: SIMD3<Float>, scale: SIMD3<Float>) -> simd_float4x4 {
+    return createScaleMatrix(xScale: scale.x, yScale: scale.y, zScale: scale.z) * createRotationMatrix(xRotation: rotation.x, yRotation: rotation.y, zRotation: rotation.z) * createTranslationMatrix(tx: position.x, ty: position.y, tz: position.z)
+}

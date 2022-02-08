@@ -30,12 +30,15 @@
 		CBC747732782DAF9000935A3 /* NullRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC747722782DAF9000935A3 /* NullRenderer.swift */; };
 		CBE52C7227B06FAB00F3BED1 /* Bunny.usdz in Resources */ = {isa = PBXBuildFile; fileRef = CBE52C7127B06FAB00F3BED1 /* Bunny.usdz */; };
 		CBE52C7427B06FB900F3BED1 /* Bunny.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE52C7327B06FB900F3BED1 /* Bunny.swift */; };
+		CBE52C7A27B07E2400F3BED1 /* Transformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE52C7927B07E2400F3BED1 /* Transformable.swift */; };
 		CBEC0C6E278BF17100777FD3 /* Input Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C6D278BF17100777FD3 /* Input Controller.swift */; };
 		CBEC0C74278BFC1600777FD3 /* Keyboard Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C73278BFC1600777FD3 /* Keyboard Control.swift */; };
 		CBEC0C76278BFE6400777FD3 /* Null Input Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C75278BFE6400777FD3 /* Null Input Controller.swift */; };
 		CBEC0C78278BFE9D00777FD3 /* Standard Input Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C77278BFE9D00777FD3 /* Standard Input Controller.swift */; };
 		CBEC0C7B278C01F600777FD3 /* Input State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C7A278C01F600777FD3 /* Input State.swift */; };
 		CBEC0C7D278C034F00777FD3 /* Debug Input Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C7C278C034F00777FD3 /* Debug Input Controller.swift */; };
+		CBF24D5027B2FB3400FC37DB /* Transformable Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF24D4F27B2FB3400FC37DB /* Transformable Component.swift */; };
+		CBF24D5327B2FED000FC37DB /* Renderable Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF24D5227B2FED000FC37DB /* Renderable Component.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,12 +68,15 @@
 		CBC747722782DAF9000935A3 /* NullRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullRenderer.swift; sourceTree = "<group>"; };
 		CBE52C7127B06FAB00F3BED1 /* Bunny.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Bunny.usdz; sourceTree = "<group>"; };
 		CBE52C7327B06FB900F3BED1 /* Bunny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bunny.swift; sourceTree = "<group>"; };
+		CBE52C7927B07E2400F3BED1 /* Transformable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformable.swift; sourceTree = "<group>"; };
 		CBEC0C6D278BF17100777FD3 /* Input Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Input Controller.swift"; sourceTree = "<group>"; };
 		CBEC0C73278BFC1600777FD3 /* Keyboard Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboard Control.swift"; sourceTree = "<group>"; };
 		CBEC0C75278BFE6400777FD3 /* Null Input Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Null Input Controller.swift"; sourceTree = "<group>"; };
 		CBEC0C77278BFE9D00777FD3 /* Standard Input Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Standard Input Controller.swift"; sourceTree = "<group>"; };
 		CBEC0C7A278C01F600777FD3 /* Input State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Input State.swift"; sourceTree = "<group>"; };
 		CBEC0C7C278C034F00777FD3 /* Debug Input Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Debug Input Controller.swift"; sourceTree = "<group>"; };
+		CBF24D4F27B2FB3400FC37DB /* Transformable Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transformable Component.swift"; sourceTree = "<group>"; };
+		CBF24D5227B2FED000FC37DB /* Renderable Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Renderable Component.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +103,8 @@
 		CB2D71882793EE190045056C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CB2D71862793EDE20045056C /* Renderable.swift */,
+				CBF24D5127B2FEC400FC37DB /* Renderable */,
+				CBF24D4E27B2FB2500FC37DB /* Transformable */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -274,6 +281,24 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		CBF24D4E27B2FB2500FC37DB /* Transformable */ = {
+			isa = PBXGroup;
+			children = (
+				CBE52C7927B07E2400F3BED1 /* Transformable.swift */,
+				CBF24D4F27B2FB3400FC37DB /* Transformable Component.swift */,
+			);
+			path = Transformable;
+			sourceTree = "<group>";
+		};
+		CBF24D5127B2FEC400FC37DB /* Renderable */ = {
+			isa = PBXGroup;
+			children = (
+				CB2D71862793EDE20045056C /* Renderable.swift */,
+				CBF24D5227B2FED000FC37DB /* Renderable Component.swift */,
+			);
+			path = Renderable;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -354,6 +379,7 @@
 				CBA97916279539BD0065A75C /* Library.swift in Sources */,
 				CBEC0C78278BFE9D00777FD3 /* Standard Input Controller.swift in Sources */,
 				CBA7B8E4279FD9B60010375D /* Mesh Library.swift in Sources */,
+				CBE52C7A27B07E2400F3BED1 /* Transformable.swift in Sources */,
 				CBA97920279645D30065A75C /* Vertex Descriptor Library.swift in Sources */,
 				CBEC0C7D278C034F00777FD3 /* Debug Input Controller.swift in Sources */,
 				CBC74762278284A5000935A3 /* MetalGameView.swift in Sources */,
@@ -367,10 +393,12 @@
 				CBC747732782DAF9000935A3 /* NullRenderer.swift in Sources */,
 				CB2D71872793EDE20045056C /* Renderable.swift in Sources */,
 				CBEC0C6E278BF17100777FD3 /* Input Controller.swift in Sources */,
+				CBF24D5027B2FB3400FC37DB /* Transformable Component.swift in Sources */,
 				CBC7475327828482000935A3 /* AppDelegate.swift in Sources */,
 				CBC747712782D5C2000935A3 /* Renderer.swift in Sources */,
 				CBC74764278286B3000935A3 /* Basic.metal in Sources */,
 				CBA97925279663DD0065A75C /* Render Pipeline State Library.swift in Sources */,
+				CBF24D5327B2FED000FC37DB /* Renderable Component.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

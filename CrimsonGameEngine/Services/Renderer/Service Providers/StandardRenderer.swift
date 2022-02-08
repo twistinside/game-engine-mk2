@@ -6,7 +6,6 @@ class StandardRenderer: NSObject, Renderer {
     let commandQueue: MTLCommandQueue
     
     var uniforms: Uniforms = Uniforms()
-    var bunny: Bunny?
     var cube: Cube?
         
     override init() {
@@ -37,13 +36,13 @@ extension StandardRenderer: MTKViewDelegate {
         
         renderCommandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.stride, index: 0)
         
-        if let unwrapped = bunny {
+        if let unwrapped = cube {
             unwrapped.update(deltaTime: 1/Float(view.preferredFramesPerSecond))
             unwrapped.render(renderCommandEncoder: renderCommandEncoder)
         } else {
-            bunny = Bunny()
-            bunny!.update(deltaTime: 1/Float(view.preferredFramesPerSecond))
-            bunny!.render(renderCommandEncoder: renderCommandEncoder)
+            cube = Cube()
+            cube!.update(deltaTime: 1/Float(view.preferredFramesPerSecond))
+            cube!.render(renderCommandEncoder: renderCommandEncoder)
         }
         
         renderCommandEncoder.endEncoding()
