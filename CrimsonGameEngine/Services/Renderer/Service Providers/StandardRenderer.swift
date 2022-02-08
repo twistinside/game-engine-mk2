@@ -6,6 +6,7 @@ class StandardRenderer: NSObject, Renderer {
     let commandQueue: MTLCommandQueue
     
     var uniforms: Uniforms = Uniforms()
+    var camera: Camera?
     var cube: Cube?
         
     override init() {
@@ -32,6 +33,15 @@ extension StandardRenderer: MTKViewDelegate {
               let commandBuffer = commandQueue.makeCommandBuffer(),
               let renderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
             fatalError()
+        }
+        
+        if let unwrapped = camera {
+            unwrapped.update(deltaTime: 1/Float(view.preferredFramesPerSecond))
+            uniforms.viewMatrix = unwrapped.viewMatrix
+        } else {
+            camera = Camera()
+            camera!.update(deltaTime: 1/Float(view.preferredFramesPerSecond))
+            uniforms.viewMatrix = camera!.viewMatrix
         }
         
         renderCommandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.stride, index: 0)

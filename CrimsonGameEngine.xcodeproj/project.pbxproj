@@ -39,6 +39,7 @@
 		CBEC0C7D278C034F00777FD3 /* Debug Input Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEC0C7C278C034F00777FD3 /* Debug Input Controller.swift */; };
 		CBF24D5027B2FB3400FC37DB /* Transformable Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF24D4F27B2FB3400FC37DB /* Transformable Component.swift */; };
 		CBF24D5327B2FED000FC37DB /* Renderable Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF24D5227B2FED000FC37DB /* Renderable Component.swift */; };
+		CBF24D5527B3274800FC37DB /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF24D5427B3274800FC37DB /* Camera.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		CBEC0C7C278C034F00777FD3 /* Debug Input Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Debug Input Controller.swift"; sourceTree = "<group>"; };
 		CBF24D4F27B2FB3400FC37DB /* Transformable Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transformable Component.swift"; sourceTree = "<group>"; };
 		CBF24D5227B2FED000FC37DB /* Renderable Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Renderable Component.swift"; sourceTree = "<group>"; };
+		CBF24D5427B3274800FC37DB /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				CBA7B8E1279FD98F0010375D /* Cube.swift */,
 				CBE52C7327B06FB900F3BED1 /* Bunny.swift */,
+				CBF24D5427B3274800FC37DB /* Camera.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				CBA9791E279621510065A75C /* Shader Library.swift in Sources */,
 				CBC747732782DAF9000935A3 /* NullRenderer.swift in Sources */,
 				CB2D71872793EDE20045056C /* Renderable.swift in Sources */,
+				CBF24D5527B3274800FC37DB /* Camera.swift in Sources */,
 				CBEC0C6E278BF17100777FD3 /* Input Controller.swift in Sources */,
 				CBF24D5027B2FB3400FC37DB /* Transformable Component.swift in Sources */,
 				CBC7475327828482000935A3 /* AppDelegate.swift in Sources */,
