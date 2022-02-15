@@ -3,16 +3,15 @@ import MetalKit
 struct RenderPipelineDescriptorLibrary {
     private(set) var renderPipelineDescriptors: [RenderPipelineDescriptorResource: MTLRenderPipelineDescriptor] = [:]
     
-    init(shaderLibrary: ShaderLibrary, vertexDescriptorLibrary: VertexDescriptorLibrary) {
+    init(shaderLibrary: ShaderLibrary) {
         for resource in RenderPipelineDescriptorResource.allCases {
-            let renderPipelineDescriptor = makeRenderPipelineDescriptor(from: resource, shaderLibrary: shaderLibrary, vertexDescriptorLibrary: vertexDescriptorLibrary)
+            let renderPipelineDescriptor = makeRenderPipelineDescriptor(from: resource, shaderLibrary: shaderLibrary)
             renderPipelineDescriptors.updateValue(renderPipelineDescriptor, forKey: resource)
         }
     }
     
     private func makeRenderPipelineDescriptor(from resource: RenderPipelineDescriptorResource,
-                                      shaderLibrary: ShaderLibrary,
-                                      vertexDescriptorLibrary: VertexDescriptorLibrary) -> MTLRenderPipelineDescriptor {
+                                      shaderLibrary: ShaderLibrary) -> MTLRenderPipelineDescriptor {
         switch resource {
         case .basic:
             guard let vertexFunction = shaderLibrary.shaders[.basicVertex],

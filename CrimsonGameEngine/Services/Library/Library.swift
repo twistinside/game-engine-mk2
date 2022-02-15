@@ -11,7 +11,7 @@ struct Library {
         self.shaderLibrary = ShaderLibrary(device: device)
         self.vertexDescriptorLibrary = VertexDescriptorLibrary()
         self.meshLibrary = MeshLibrary(device: device, vertexDescriptorLibrary: vertexDescriptorLibrary)
-        self.renderPipelineDescriptorLibrary = RenderPipelineDescriptorLibrary(shaderLibrary: shaderLibrary, vertexDescriptorLibrary: vertexDescriptorLibrary)
+        self.renderPipelineDescriptorLibrary = RenderPipelineDescriptorLibrary(shaderLibrary: shaderLibrary)
         self.renderPipelineStateLibrary = RenderPipelineStateLibrary(device: device, renderPipelineDescriptorLibrary: renderPipelineDescriptorLibrary)
     }
     
