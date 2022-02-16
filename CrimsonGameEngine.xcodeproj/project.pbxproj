@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB2D71872793EDE20045056C /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D71862793EDE20045056C /* Renderable.swift */; };
+		CB38E80227BC94BA0066AF21 /* Cube.usdz in Resources */ = {isa = PBXBuildFile; fileRef = CB38E80127BC94BA0066AF21 /* Cube.usdz */; };
 		CB6847CE27A274D000BCA69F /* Matrix Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6847CD27A274D000BCA69F /* Matrix Globals.swift */; };
 		CBA7B8E0279FD97F0010375D /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7B8DF279FD97F0010375D /* Entity.swift */; };
 		CBA7B8E2279FD98F0010375D /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7B8E1279FD98F0010375D /* Cube.swift */; };
@@ -18,7 +19,6 @@
 		CBA97920279645D30065A75C /* Vertex Descriptor Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9791F279645D30065A75C /* Vertex Descriptor Library.swift */; };
 		CBA979232796468D0065A75C /* Render Pipeline Descriptor Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA979222796468D0065A75C /* Render Pipeline Descriptor Library.swift */; };
 		CBA97925279663DD0065A75C /* Render Pipeline State Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA97924279663DD0065A75C /* Render Pipeline State Library.swift */; };
-		CBA979272797A38E0065A75C /* Cube.usdz in Resources */ = {isa = PBXBuildFile; fileRef = CBA979262797A38E0065A75C /* Cube.usdz */; };
 		CBC7475327828482000935A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7475227828482000935A3 /* AppDelegate.swift */; };
 		CBC7475727828483000935A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBC7475627828483000935A3 /* Assets.xcassets */; };
 		CBC7475A27828483000935A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC7475827828483000935A3 /* Main.storyboard */; };
@@ -44,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		CB2D71862793EDE20045056C /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
+		CB38E80127BC94BA0066AF21 /* Cube.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Cube.usdz; sourceTree = "<group>"; };
 		CB4313032786DA960095977A /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; usesTabs = 0; };
 		CB6847CD27A274D000BCA69F /* Matrix Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Matrix Globals.swift"; sourceTree = "<group>"; };
 		CBA7B8DF279FD97F0010375D /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		CBA9791F279645D30065A75C /* Vertex Descriptor Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vertex Descriptor Library.swift"; sourceTree = "<group>"; };
 		CBA979222796468D0065A75C /* Render Pipeline Descriptor Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Render Pipeline Descriptor Library.swift"; sourceTree = "<group>"; };
 		CBA97924279663DD0065A75C /* Render Pipeline State Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Render Pipeline State Library.swift"; sourceTree = "<group>"; };
-		CBA979262797A38E0065A75C /* Cube.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Cube.usdz; sourceTree = "<group>"; };
 		CBC7474F27828482000935A3 /* CrimsonGameEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrimsonGameEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC7475227828482000935A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBC7475627828483000935A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				CBE52C7127B06FAB00F3BED1 /* Bunny.usdz */,
-				CBA979262797A38E0065A75C /* Cube.usdz */,
+				CB38E80127BC94BA0066AF21 /* Cube.usdz */,
 				CBC7475627828483000935A3 /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -360,8 +360,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB38E80227BC94BA0066AF21 /* Cube.usdz in Resources */,
 				CBC7475727828483000935A3 /* Assets.xcassets in Resources */,
-				CBA979272797A38E0065A75C /* Cube.usdz in Resources */,
 				CBE52C7227B06FAB00F3BED1 /* Bunny.usdz in Resources */,
 				CBC7475A27828483000935A3 /* Main.storyboard in Resources */,
 			);

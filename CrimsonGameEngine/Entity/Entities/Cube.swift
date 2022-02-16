@@ -21,8 +21,15 @@ class Cube: Entity, Renderable {
     }
     
     override func update(deltaTime: Float) {
-        self.translate(by: SIMD3<Float>(0, 0, 0))
         self.rotate(by: SIMD3<Float>(0, deltaTime, 0))
         _elapsedTime += deltaTime
+        
+        if (ServiceLocator.shared.inputController.keysDown.contains(.i)) {
+            transformableComponent.scale += SIMD3<Float>(repeating: deltaTime)
+        }
+        
+        if (ServiceLocator.shared.inputController.keysDown.contains(.o)) {
+            transformableComponent.scale = max(transformableComponent.scale - SIMD3<Float>(repeating: deltaTime), 0)
+        }
     }
 }

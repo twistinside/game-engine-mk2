@@ -7,7 +7,7 @@ class StandardRenderer: NSObject, Renderer {
     
     var uniforms: Uniforms = Uniforms()
     var camera: Camera?
-    var cube: Cube?
+    var bunny: Bunny?
         
     override init() {
         guard let device = MTLCreateSystemDefaultDevice(),
@@ -46,13 +46,14 @@ extension StandardRenderer: MTKViewDelegate {
         
         renderCommandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.stride, index: 0)
         
-        if let unwrapped = cube {
+        if let unwrapped = bunny {
             unwrapped.update(deltaTime: 1/Float(view.preferredFramesPerSecond))
             unwrapped.render(renderCommandEncoder: renderCommandEncoder)
         } else {
-            cube = Cube()
-            cube!.update(deltaTime: 1/Float(view.preferredFramesPerSecond))
-            cube!.render(renderCommandEncoder: renderCommandEncoder)
+            bunny = Bunny()
+            bunny!.update(deltaTime: 1/Float(view.preferredFramesPerSecond))
+            bunny!.render(renderCommandEncoder: renderCommandEncoder)
+            bunny!.translate(by: SIMD3<Float>(2, 0, 0))
         }
         
         renderCommandEncoder.endEncoding()

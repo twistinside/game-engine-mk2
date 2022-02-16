@@ -15,7 +15,7 @@ extension Renderable {
                 renderCommandEncoder.setVertexBytes(&mutableMatrix, length: MemoryLayout<matrix_float4x4>.stride, index: 1)
                 renderCommandEncoder.setVertexBuffer(vertexBuffer.buffer, offset: vertexBuffer.offset, index: 2)
                 for submesh in mesh.submeshes {
-                    renderCommandEncoder.drawIndexedPrimitives(type: submesh.primitiveType,
+                    renderCommandEncoder.drawIndexedPrimitives(type: .line,
                                                                indexCount: submesh.indexCount,
                                                                indexType: submesh.indexType,
                                                                indexBuffer: submesh.indexBuffer.buffer,

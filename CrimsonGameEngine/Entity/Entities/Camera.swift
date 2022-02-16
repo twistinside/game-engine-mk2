@@ -18,11 +18,11 @@ class Camera: Entity, Transformable {
         }
         
         if (ServiceLocator.shared.inputController.keysDown.contains(.w)) {
-            transformableComponent.position.y += deltaTime
+            transformableComponent.position.z += deltaTime
         }
         
         if (ServiceLocator.shared.inputController.keysDown.contains(.s)) {
-            transformableComponent.position.y -= deltaTime
+            transformableComponent.position.z -= deltaTime
         }
         
         if (ServiceLocator.shared.inputController.keysDown.contains(.space)) {
